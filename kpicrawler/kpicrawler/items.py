@@ -5,7 +5,34 @@
 
 from scrapy.item import Item, Field
 
-class KpicrawlerItem(Item):
+class KpiScheduleItemBase(Item):
+    id = Field()
+    odd = Field()
+    even = Field()
+    pass
+
+class KpiAutosuggestItemBase(Item):
     # define the fields for your item here like:
-    # name = Field()
+    id = Field()
+    name = Field()
+    pass
+
+
+class KpiGroupItem(KpiAutosuggestItemBase):
+    # define the fields for your item here like:
+    pass
+
+class KpiGroupscheduleItem(KpiScheduleItemBase):
+    # define the fields for your item here like:
+    pass
+
+
+class KpiTeacherItem(KpiAutosuggestItemBase):
+    # define the fields for your item here like:
+    surname = Field()
+    midint = Field()
+    pass
+
+class KpiTeacherscheduleItem(KpiScheduleItemBase):
+    # define the fields for your item here like:
     pass
