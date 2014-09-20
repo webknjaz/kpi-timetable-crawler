@@ -20,6 +20,7 @@ class KpiAutosuggestItemBase(Item):
 
 class KpiGroupItem(KpiAutosuggestItemBase):
     # define the fields for your item here like:
+    full_name = Field()
     pass
 
 class KpiGroupscheduleItem(KpiScheduleItemBase):
