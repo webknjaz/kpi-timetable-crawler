@@ -13,3 +13,19 @@ NEWSPIDER_MODULE = 'kpicrawler.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'kpicrawler (+http://www.yourdomain.com)'
+
+MONGODB_URI = 'mongodb://localhost:27017'
+MONGODB_DATABASE = 'scrapy'
+MONGODB_COLLECTION = 'KPItimetable'
+MONGODB_UNIQUE_KEY = 'id'
+MONGODB_ADD_TIMESTAMP = True
+
+MONGODB_COLLECTIONS_POSTFIX = {
+        'GROUPS': 'Groups',
+        'LECTORS': 'Lectors',
+        'TIMETABLES': 'Timetables'
+        }
+
+ITEM_PIPELINES = {
+        'kpicrawler.pipelines.PerSpiderMongoDBPipeline': 100,
+        }
